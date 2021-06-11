@@ -19,7 +19,6 @@ public class Stack_2493 {
 
 		String[] str = br.readLine().split(" ");
 
-		bw.write(tops.size() + " ");
 
 		for (int i = 0; i < N; i++) {
 			int now = Integer.parseInt(str[i]);
