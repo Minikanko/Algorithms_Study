@@ -12,37 +12,35 @@ public class Stack_4889 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		int count = 0;
+		int N = 0;
 		
 		while (true) {
-			count++;
-			int result = 0;
-			String[] inputStr = br.readLine().split("");
-			Stack<String> stack = new Stack<String>();
+			N++;
+			int count = 0;
+			String inputStr = br.readLine();
+			
+			Stack<Character> stack = new Stack<Character>();
+			
+			//종료되는 상황
+			if (inputStr.contains("-")) break;
 
-			if (inputStr[0].equals("-"))
-				break;
-
-			for (String str : inputStr) {
-				if (stack.isEmpty())
-					stack.push(str);
-				else if (stack.peek().equals("{") && str.equals("}")) {
-					stack.pop();
-				} 
+			for (Character c: inputStr.toCharArray()) {
+				if(c == '{') {
+					stack.push(c);
+				}
 				else {
-					stack.push(str);
+					if(stack.isEmpty()) {
+						count++;
+						stack.push(c);
+					}
+						
+					else if(stack.peek()=='{') {
+						stack.pop();
+					}
 				}
 			}
-			while(!stack.isEmpty()) {
-				String curStr = stack.pop();
-				String beforeStr = stack.pop();
-				if(beforeStr.equals(curStr)) {
-					result++;
-				}
-				else result+=2;
-			}
-				
-			bw.write(count + ". " + result +"\n");	
+			
+			bw.write(N + ". " + (count+stack.size()/2) +"\n");	
 			
 		}
 		bw.flush();
