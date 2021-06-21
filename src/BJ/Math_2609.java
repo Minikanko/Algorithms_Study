@@ -14,20 +14,24 @@ public class Math_2609 {
 		
 		nums[0]= Integer.parseInt(str[0]);
 		nums[1]= Integer.parseInt(str[1]);
-		int index=1;
-		int maxNum = 1;
-		int minNum = 1; 
 		
-		while(Math.min(nums[0], nums[1]) >= index) {
-			if(nums[0]%index==0 && nums[1]%index==0) {
-				maxNum=index;
-			}
-			index++;
-		}
+		int gcd = gcd(nums[0],nums[1]);
+		int lcm = nums[0]*nums[1]/gcd;
 		
-		minNum = (nums[0]/maxNum) *(nums[1]/maxNum) * maxNum;
-		System.out.println(maxNum);
-		System.out.println(minNum);
+		System.out.println(gcd);
+		System.out.println(lcm);
+		
+	}
+	
+	public static int gcd(int num1, int num2) {
+		if(num2==0)
+			return num1;
+		return gcd(num2,num1%num2);
+	}
+	
+	public static int reculGcd(int num1,int num2) {
+		if(num2==0) return num1;
+		return reculGcd(num2,num2%num1);
 	}
 
 }
