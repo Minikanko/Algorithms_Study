@@ -28,6 +28,7 @@ public class ClimbingStairs {
 	private static int climbStairs(int n) {
 		int[] b = {1,2};
 		Queue<Integer> q = new LinkedList<Integer>();
+		a.concat(d);
 		q.add(n);
 		int count =0;
 		while(!q.isEmpty()) {
