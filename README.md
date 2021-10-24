@@ -1,2 +1,2 @@
 # Algorithms
-Algorithms with JAVA
+Algorithms with JAVA and JS
