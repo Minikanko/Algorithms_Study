@@ -30,6 +30,4 @@ public class Recur_11729 {
 		}
 	}
 	
-	}
-
 }

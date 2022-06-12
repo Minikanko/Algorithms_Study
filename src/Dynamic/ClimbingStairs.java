@@ -20,27 +20,27 @@ import java.util.concurrent.LinkedBlockingDeque;
 
 
 public class ClimbingStairs {
-	public static void main(String[] args) {
-		int n =5;
-		System.out.println(climbStairs(n));
-	}
-
-	private static int climbStairs(int n) {
-		int[] b = {1,2};
-		Queue<Integer> q = new LinkedList<Integer>();
-		a.concat(d);
-		q.add(n);
-		int count =0;
-		while(!q.isEmpty()) {
-			int a = q.poll();
-			for(int i=0;i<b.length;i++) {
-				int c = a-b[i];
-				if(c>0)
-					q.add(c);
-				else if(c==0) count++;
-			}
-		}
-		
-		return count;
-	}
+//	public static void main(String[] args) {
+//		int n =5;
+//		System.out.println(climbStairs(n));
+//	}
+//
+//	private static int climbStairs(int n) {
+//		int[] b = {1,2};
+//		Queue<Integer> q = new LinkedList<Integer>();
+//		a.concat(b);
+//		q.add(n);
+//		int count =0;
+//		while(!q.isEmpty()) {
+//			int a = q.poll();
+//			for(int i=0;i<b.length;i++) {
+//				int c = a-b[i];
+//				if(c>0)
+//					q.add(c);
+//				else if(c==0) count++;
+//			}
+//		}
+//
+//		return count;
+//	}
 }
